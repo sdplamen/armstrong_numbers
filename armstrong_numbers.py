@@ -10,6 +10,7 @@ def find_armstrong_numbers(start, end):
     for num in range(start, end + 1):
         if is_armstrong_number(num):
             armstrong_numbers.append(num)
+
     return armstrong_numbers
 
 start_range = int(input('Enter a number to start of range for Armstrong number : '))
