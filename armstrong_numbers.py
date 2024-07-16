@@ -1,8 +1,8 @@
-def is_armstrong_number(num):
-    num_str = str(num)
+def is_armstrong_number(number):
+    num_str = str(number)
     power = len(num_str)
     armstrong_sum = sum(int(digit) ** power for digit in num_str)
-    return armstrong_sum == num
+    return armstrong_sum == number
 
 def find_armstrong_numbers(start, end):
     armstrong_numbers = []
