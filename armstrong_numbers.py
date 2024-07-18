@@ -17,4 +17,4 @@ start_range = int(input('Enter a number to start of range for Armstrong number :
 end_range = int(input('Enter a number to end of range for Armstrong number : '))
 
 result = find_armstrong_numbers(start_range, end_range)
-print(f'Armstrong numbers in the range of {start_range, end_range} are {result}')
+print(f'Armstrong numbers in the range of {start_range} - {end_range} are {result}')
