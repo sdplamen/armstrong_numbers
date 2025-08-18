@@ -1,4 +1,9 @@
 from django.shortcuts import render
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework import status
+from armstrong_nums.serializers import ArmstrongNumberSerializer
+
 
 # Create your views here.
 def is_armstrong_number(number):
@@ -42,3 +47,27 @@ def armstrong_numbers_view(request):
         'end_range': end_range,
         'error_message': error_message
     })
+
+
+class ArmstrongNumbersAPIView(APIView):
+    serializer_class = ArmstrongNumberSerializer
+    def post(self, request):
+        try :
+            start_range = request.data.get('start_range')
+            end_range = request.data.get('end_range')
+
+            if start_range is None or end_range is None :
+                return Response({'error' :'start_range and end_range are required fields.'}, status=status.HTTP_400_BAD_REQUEST)
+
+            start_range = int(start_range)
+            end_range = int(end_range)
+
+            if start_range < 0 or end_range < start_range :
+                return Response({'error' :'Start range must be non-negative and less than or equal to end range.'}, status=status.HTTP_400_BAD_REQUEST)
+
+            armstrong_numbers = find_armstrong_numbers(start_range, end_range)
+
+            return Response({'armstrong_numbers' :armstrong_numbers}, status=status.HTTP_200_OK)
+
+        except ValueError :
+            return Response({'error' :'Please enter valid integers for both start and end range.'}, status=status.HTTP_400_BAD_REQUEST)
