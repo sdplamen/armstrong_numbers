@@ -9,8 +9,6 @@ This is a web application built with Django that calculates Armstrong numbers wi
 *   Includes a REST API for programmatic access.
 *   Handles user input validation and provides clear error messages.
 
-## Usage
-
 ### REST API
 
 The API endpoint `/api/armstrong-numbers/` allows you to find Armstrong numbers programmatically.
