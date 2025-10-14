@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Bad+Script&family=Comforter+Brush&family=Great+Vibes&family=Marck+Script&display=swap');
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Montserrat, sans-serif;
+    background-color: #264b5d;
+    margin: 0 auto;
+    padding: 20px;
+    line-height: 1.6;
+    color: #ffffcc;
+}
+
+ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 0;
+    flex-wrap: wrap;
+}
+
+.container {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.form-container input {
+    margin: 10px 0;
+    padding: 10px;
+    border: none;
+    outline: none;
+}
+
+input[type="number"] {
+    background-color: #264b5d;
+    padding: 8px;
+    font-size: 16px;
+    margin-right: 0;
+    color: #ffffcc;
+    border: 1px solid #ffffcc;
+    border-radius: 4px;
+}
+
+input[type="submit"] {
+    padding: 8px 16px;
+    background-color: #4CAF50;
+    color: #ffffcc;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+.btn {
+    width: 20%;
+    margin: 20px auto;
+    font-size: 16px;
+    border-radius: 10px;
+}
+
+.error {
+    color: red;
+}
+
+.result, .stored-numbers {
+    justify-content: center;
+    margin-top: 20px;
+}
+
+@media screen and (max-width: 800px) {
+    h1 {
+        font-size: 24px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .form-container {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    h1 {
+        font-size: 18px;
+    }
+
+    ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn {
+        width: 60%;
+        margin: 20px auto;
+        font-size: 16px;
+        border-radius: 10px;
+    }
+}
