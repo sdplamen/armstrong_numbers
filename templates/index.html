@@ -3,23 +3,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>Armstrong Numbers Calculator</title>
     <link rel="stylesheet" href="{% static 'style.css' %}">
 </head>
 <body>
-    <h1>Armstrong Numbers Calculator</h1>
-    <p>It's a number that is equal to the sum of cubes of its digits.</p>
-    <div class="form-container">
-        <form method="post">
-            {% csrf_token %}
-            <label for="start_range">Start of range:</label>
-            <input type="number" id="start_range" name="start_range" min="0" required>
-            <label for="end_range">End of range:</label>
-            <input type="number" id="end_range" name="end_range" min="0" required>
-            <input type="submit" value="Calculate">
-        </form>
-    </div>
+<main class="container">
+    <header class="title">
+        <h1>Armstrong Numbers Calculator</h1>
+        <p>It's a number that is equal to the sum of cubes of its digits.</p>
+    </header>
+    <form class="form-container" method="post">
+        {% csrf_token %}
+        <label for="start_range">Start of range:</label>
+        <input type="number" id="start_range" name="start_range" min="0" required>
+        <label for="end_range">End of range:</label>
+        <input type="number" id="end_range" name="end_range" min="0" required>
+        <input class="btn" type="submit" value="Calculate">
+    </form>
     {% if error_message %}
         <p class="error">{{ error_message }}</p>
     {% elif start_range is not None and end_range is not None %}
@@ -44,5 +46,6 @@
             </ul>
         </div>
     {% endif %}
+</main>
 </body>
 </html>
