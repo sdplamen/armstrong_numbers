@@ -46,6 +46,7 @@ ul {
     padding: 10px;
     border: none;
     outline: none;
+    width: 80%;
 }
 
 input[type="number"] {
