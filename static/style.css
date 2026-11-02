@@ -80,6 +80,11 @@ input[type="submit"]:hover {
     border-radius: 10px;
 }
 
+.timing {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
 .error {
     color: red;
 }

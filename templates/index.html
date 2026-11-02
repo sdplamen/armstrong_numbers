@@ -17,9 +17,9 @@
     <form class="form-container" method="post">
         {% csrf_token %}
         <label for="start_range">Start of range:</label>
-        <input type="number" id="start_range" name="start_range" min="0" required>
+        <input type="number" id="start_range" name="start_range" min="0" value="{{ start_range|default_if_none:'' }}" required>
         <label for="end_range">End of range:</label>
-        <input type="number" id="end_range" name="end_range" min="0" required>
+        <input type="number" id="end_range" name="end_range" min="0" value="{{ end_range|default_if_none:'' }}" required>
         <input class="btn" type="submit" value="Calculate">
     </form>
     {% if error_message %}
@@ -28,6 +28,7 @@
         {% if armstrong_numbers %}
             <div class="result">
                 <p>Armstrong numbers in the range {{ start_range }} to {{ end_range }}:</p>
+                <p class="timing">Found {{ armstrong_numbers|length }} with the {% if engine == 'c' %}C{% else %}Python{% endif %} engine in {{ elapsed_ms }} ms.</p>
                 <ul>
                     {% for num in armstrong_numbers %}
                         <li>{{ num }}</li>
