@@ -1,5 +1,6 @@
 import time
 
+from decouple import config
 from django.shortcuts import render
 from rest_framework.views import APIView
 from rest_framework.response import Response
@@ -8,8 +9,8 @@ from armstrong_nums.serializers import ArmstrongNumberSerializer
 from armstrong_nums.armstrong import ENGINES, MAX_END_RANGE, find_armstrong_numbers
 from armstrong_nums.c_engine import CEngineUnavailable
 
-# Engine used for calculations: 'python' or 'c'.
-ENGINE = 'python'
+# Engine used for calculations: 'python' or 'c'. Can be set with the ENGINE environment variable.
+ENGINE = config('ENGINE', default='python')
 
 
 def validate_range(start_range, end_range, engine):
